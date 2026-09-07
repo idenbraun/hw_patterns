@@ -21,16 +21,10 @@ public class DataGenerator {
     private DataGenerator() {
     }
 
-    public static String generateDate(int shift) {
+    public static String generateDate(int shift, String pattern) {
         return LocalDate.now()
                 .plusDays(shift)
-                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-    }
-
-    public static String generateDateDigits(int shift) {
-        return LocalDate.now()
-                .plusDays(shift)
-                .format(DateTimeFormatter.ofPattern("ddMMyyyy"));
+                .format(DateTimeFormatter.ofPattern(pattern));
     }
 
     public static String generateCity(Faker faker) {
