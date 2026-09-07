@@ -50,8 +50,8 @@ public class ReplanDeliveryTest {
         DataGenerator.UserInfo user = DataGenerator.Registration.generateUser("ru");
 
         int firstShift = 4;
-        String firstDateFormatted = DataGenerator.generateDate(firstShift);
-        String firstDateDigits = DataGenerator.generateDateDigits(firstShift);
+        String firstDateFormatted = DataGenerator.generateDate(firstShift, "dd.MM.yyyy");
+        String firstDateDigits = DataGenerator.generateDate(firstShift, "ddMMyyyy");
 
         fillForm(user, firstDateDigits);
 
@@ -60,8 +60,8 @@ public class ReplanDeliveryTest {
                 .shouldHave(text("Встреча успешно запланирована на " + firstDateFormatted));
 
         int secondShift = 7;
-        String secondDateFormatted = DataGenerator.generateDate(secondShift);
-        String secondDateDigits = DataGenerator.generateDateDigits(secondShift);
+        String secondDateFormatted = DataGenerator.generateDate(secondShift, "dd.MM.yyyy");
+        String secondDateDigits = DataGenerator.generateDate(secondShift, "ddMMyyyy");
 
         fillForm(user, secondDateDigits);
 
